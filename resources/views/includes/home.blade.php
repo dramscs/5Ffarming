@@ -1,15 +1,11 @@
-@extends('layout.structure')
-
-
-
+@extends('includes.stucture')
 
 @section('content')
-
- <div id="app">
+<div id="app">
         <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+                <img src="{{asset('public/image/final-logo.png')}}">
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -18,8 +14,21 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-						  <li class="nav-item">
-                                    <a class="nav-link" href="{{asset('posts')}}">Posts</a>
+                   	
+						<li class="nav-item">
+                                    <a class="nav-link" href="#">Events</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Program</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{asset('speakers')}}">Speakers</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Gallary</a>
+                                </li>
+                                 <li class="nav-item">
+                                    <a class="nav-link" href="#">Registration List</a>
                                 </li>
                     </ul>
 
@@ -58,39 +67,6 @@
                 </div>
             </div>
         </nav>
-
-        <main class="py-4">
-            @yield('content')
-        </main>
     </div>
-<div class="container">
-	@include('includes.messages')
-	<a href="{{url('posts/create')}}">Create a new post</a>
-	<h1>Post <small>(Retrive data from database in laravel)</small></h1>
-	
-</div>
-@if(count($posts) > 0)
-
-@foreach($posts as $post)
-<div class="container">
-	<div class="post-style">
-		<h3><a href="posts/{{$post->id}}">{{$post->title}}</a></h3>
-		<div class="inner">
-			<small>Written on {{$post->created_at}}</small>
-			{!!$post->body!!}
-		</div>
-
-	</div>
-</div>
-@endforeach
-<!-- Pagination links	-->
-
-
-@else
-<div class="container">
-	<p>No Post Found</p>
-</div>
-
-@endif
 
 @endsection
