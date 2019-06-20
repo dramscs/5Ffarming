@@ -51,6 +51,7 @@ background-image: -webkit-linear-gradient(right, #008080 0%, #85C102 100%);
 
 /* W3C Markup */ 
 background-image: linear-gradient(to left, #008080 0%, #85C102 100%);
+overflow: hidden;
 }
 
 
@@ -59,15 +60,14 @@ background-image: linear-gradient(to left, #008080 0%, #85C102 100%);
 }
 
 .positioning {
+  position: relative;
 	height: 100vh;
 }
 
 .centering {
 
-	position: relative;
-  top: calc(100vh - 80vh);
-  left: calc(100% - 100%);
-
+position: absolute;
+top: calc(100vh - 95%);
 
 }
 
@@ -233,6 +233,19 @@ background-image: linear-gradient(to left, #008080 0%, #85C102 100%);
       width: 60%;
       top: calc(100vh - 80vh);
       left: calc(60% - 40%);
+  }
+
+
+  .positioning {
+    position: relative;
+    height: 100vh;
+  }
+  
+  .centering {
+  
+  position: absolute;
+  top: calc(100vh - 80%);
+  
   }
 
 

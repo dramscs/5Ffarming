@@ -28,7 +28,7 @@ background-image: -webkit-linear-gradient(right, #008080 0%, #85C102 100%);
 /* W3C Markup */ 
 background-image: linear-gradient(to left, #008080 0%, #85C102 100%);
 
-overflow: hidden;
+overflow: hidden !important;
 
 }
 
@@ -36,19 +36,18 @@ overflow: hidden;
 	padding-top: 40px;
 }
 
+
 .positioning {
 	height: 100vh;
+	position: relative;
+	overflow: hidden !important;
 }
 
 .centering {
 
-	position: relative;
+	position: absolute;
 	top: calc(100vh - 80vh);
-	
-
 }
-
-
 
 
 
@@ -58,8 +57,19 @@ overflow: hidden;
 
 .background {
 
-	overflow: auto !important;
+	overflow: hidden;
 }
+
+
+.positioning {
+	height: 100vh;
+	position: relative;
+}
+
+.centering {
+
+	position: absolute;
+	
 
 
 }
