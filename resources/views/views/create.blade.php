@@ -1,7 +1,7 @@
 @include('includes.home')
   
 <div class="container">
-<div class="row">
+<div class="row" style="padding-top:80px;">
     <div class="col-lg-12 margin-tb">
         <div class="pull-left">
             <h2>Add New Speaker</h2>
@@ -20,8 +20,9 @@
     </div>
 @endif
    
-<form href="{{ asset('store') }}" method="POST">
- 
+<form action="{{ route('speakers.store') }}" method="POST">
+    @csrf
+  
      <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
@@ -33,6 +34,12 @@
             <div class="form-group">
                 <strong>Designation:</strong>
                 <textarea class="form-control" style="height:150px" name="designation" placeholder="Detail"></textarea>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Image:</strong>
+                <textarea class="form-control" style="height:150px" name="avatar" placeholder="Avatar"></textarea>
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">

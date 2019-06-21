@@ -22,17 +22,29 @@
     <table class="table table-bordered">
         <tr>
             <th>No</th>
-            <th>Name</th>
-            <th>Designation</th>
-            <th>Avatar</th>
+            <th>Event id</th>
+            <th>Registration Type</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Occupation</th>
+            <th>Single Day</th>
+            <th>Price</th>
+            <th>Message</th>
             <th width="280px">Action</th>
         </tr>
+
         @foreach ($speakers as $speaker)
         <tr>
             <td>{{ ++$i }}</td>
-            <td>{{ $speaker->name }}</td>
-            <td>{{ $speaker->designation }}</td>
-            <td>{{ $speaker->Avatar }}</td>
+            <td>{{ $speaker->registration_id }}</td>
+            <td>{{ $speaker->event_id }}</td>
+            <td>{{ $speaker->registration_type }}</td>
+            <td>{{ $speaker->name_title }}</td>
+            <td>{{ $speaker->first_name }}</td>
+            <td>{{ $speaker->last_name }}</td>
+            <td>{{ $speaker->occupation }}</td>
+            <td>{{ $speaker->price }}</td>
+            <td>{{ $speaker->message }}</td>
             <td>
          <form action="{{ route('speakers.destroy',$speaker->id) }}" method="POST">
     

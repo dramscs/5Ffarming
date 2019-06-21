@@ -14,7 +14,7 @@ class CreateSpeakersTable extends Migration
     public function up()
     {
         Schema::create('speakers', function (Blueprint $table) {
-            $table->bigIncrements('speaker_id');
+            $table->bigIncrements('id');
             $table->string('name');
             $table->string('designation');
             $table->string('avatar');

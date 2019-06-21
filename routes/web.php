@@ -4,22 +4,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
-// Route for Admin
-
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('includes.home');
+Route::get('/home', 'HomeController@index');
 
-//-> middleware auth
+Route::group( ['middleware' => ['auth']], function() {
+Route::resource('speakers','SpeakersController');
 
-// Route::middleware(['auth'])->group(function(){
-// 	Route::resource('posts','PostController');
-// });
+Route::post('/store','SpeakersController@store');
 
-
-Route::get('create', function () {
-    return view('views.create');
 });
-
-Route::get('speakers', 'SpeakersController@index')->name('speakers');

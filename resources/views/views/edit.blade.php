@@ -1,13 +1,13 @@
-@extends('layout')
+@include('includes.home')
    
-@section('content')
-    <div class="row">
+<div class="container">
+    <div class="row" style="padding-top:80px;">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
                 <h2>Edit Speaker</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('speakers.index') }}"> Back</a>
+                <a class="btn btn-primary" href="{{ asset('views.index') }}"> Back</a>
             </div>
         </div>
     </div>
@@ -36,8 +36,14 @@
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>Detail:</strong>
-                    <textarea class="form-control" style="height:150px" name="detail" placeholder="Detail">{{ $product->detail }}</textarea>
+                    <strong>Designation:</strong>
+                    <textarea class="form-control" style="height:150px" name="designation" placeholder="Designation">{{ $speaker->designation }}</textarea>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group">
+                    <strong>Avatar:</strong>
+                    <input type="text" name="avatar" value="{{ $speaker->avatar }}" class="form-control" placeholder="Name">
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12 text-center">
@@ -46,4 +52,4 @@
         </div>
    
     </form>
-@endsection
+</div>
