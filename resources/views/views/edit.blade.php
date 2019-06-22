@@ -1,4 +1,4 @@
-@include('includes.home')
+@include('layouts.home')
    
 <div class="container">
     <div class="row" style="padding-top:80px;">

@@ -1,4 +1,4 @@
-@extends('includes.stucture')
+@extends('layouts.stucture')
 
 @section('content')
 <div id="app">
@@ -19,7 +19,7 @@
                                     <a class="nav-link" href="#">Events</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">Program</a>
+                                    <a class="nav-link" href="{{asset('programs')}}">Program</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{asset('speakers')}}">Speakers</a>
@@ -28,7 +28,7 @@
                                     <a class="nav-link" href="#">Gallary</a>
                                 </li>
                                  <li class="nav-item">
-                                    <a class="nav-link" href="#">Registration List</a>
+                                    <a class="nav-link" href="{{asset('registration')}}">Registration List</a>
                                 </li>
                     </ul>
 

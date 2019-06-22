@@ -1,8 +1,8 @@
 <?php
   
 namespace App\Http\Controllers;
-  
-use App\Speaker;
+use DB;
+use App\model\Speaker;
 use Illuminate\Http\Request;
   
 class SpeakersController extends Controller
@@ -12,10 +12,11 @@ class SpeakersController extends Controller
     {
         $speakers = Speaker::latest()->paginate(5);
   
+        $speakers = DB::select("SELECT * FROM speakers WHERE active = 1 order by created_at DESC");
+        
         return view('views.index',compact('speakers'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
-   
    
     public function create()
     {
@@ -59,10 +60,14 @@ class SpeakersController extends Controller
     }
   
     
-    public function destroy(Speaker $speaker)
+    public function destroy($id)
     {
-        $speaker->delete();
-  
-        return redirect()->route('speakers.index')->with('success','Speaker deleted successfully');
+
+        $speaker = Speaker::find($id);
+		$speaker = DB::select("UPDATE speakers SET active = 0 WHERE id = $id");
+		return redirect('/speakers')->with('success','Speaker deleted successfully');
+
+      
+        // return redirect()->route('speakers.index')->with('success','Speaker deleted successfully');
     }
 }
