@@ -1,0 +1,849 @@
+html,
+body {
+
+	overflow: auto;
+	clear: both;
+	overflow-x: hidden;
+	box-sizing: border-box;
+}
+
+.para-container {
+	color: #7f7f7f
+}
+
+.breadcrumb .breadcrumb-item a {
+	color: #337ab7
+}
+
+.inner.inner-item {
+	max-width: 300px !important;
+}
+/*custom scrollbars start*/
+
+/* width */
+::-webkit-scrollbar {
+	width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+	box-shadow: inset 0 0 5px grey;
+	border-radius: 0px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	background: #505050;
+	border-radius: 0px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+	background: #000;
+}
+
+
+
+/*custom scrollbars End*/
+
+h2 {
+	text-transform: capitalize;
+}
+
+.is-hoverable:hover .icon img {
+	transform: rotateY(360deg);
+
+	-webkit-transform: rotateY(360deg);
+	-ms-transform: rotateY(360deg);
+	-o-transform: rotateY(360deg);
+	-moz-transform: rotateY(360deg);
+	transition: all 700ms ease-in-out 100ms;
+	-webkit-transition: all 700ms ease-in-out 100ms;
+	-ms-transition: all 700ms ease-in-out 100ms;
+	-o-transition: all 700ms ease-in-out 100ms;
+	-moz-transition: all 700ms ease-in-out 100ms;
+}
+
+.designation-title {
+	padding: 0px 5px 10px;
+}
+
+.default-section .text-column {
+	margin-bottom: 0;
+}
+
+.spaceless {
+
+	margin-left: 0;
+	margin-right: 0;
+}
+
+.spaceless > [class^="col-"] {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.navigation i {
+	font-size: 32px;
+}
+
+.btn-wrapper a {
+
+	display: block;
+	background: #008000;
+	text-align: center;
+	color: #fff;
+	margin: 15px 0px;
+}
+
+.text-right.customise-action {
+	margin-top: -71px;
+}
+
+.inner.links {
+	text-align: center;
+	height: 161px;
+}
+
+.links .icon {
+	margin-bottom: 17px;
+}
+
+
+/*Navigation*/
+
+.main-menu .navbar-collapse > ul > li:hover > a,
+.main-menu .navbar-collapse > ul > li.current > a,
+.main-menu .navbar-collapse > ul > li.current-menu-item > a {
+
+	background-color: #008000 !important;
+	color: #fff !important;
+}
+
+.btn-themed {
+	background-color: #008000 !important;
+	color: #fff;
+
+}
+
+/*
+.main-header .logo {
+
+	width: 160px;
+	padding: 5px 0px;
+}
+
+header.main-header.fixed-top-header .logo {
+
+	padding: 0px 0px;
+	width: 150px;
+}
+*/
+
+/*
+.main-menu .navbar-collapse > ul > li > a {
+	text-transform: capitalize;
+}
+*/
+
+.main-menu .navbar-collapse > ul > li:hover > a,
+.main-menu .navbar-collapse > ul > li.current > a,
+.main-menu .navbar-collapse > ul > li.current-menu-item > a {
+	color: #008000;
+	background-color: transparent;
+}
+
+/*Navigation End*/
+
+
+/*Organisation Background Start*/
+
+.org-background {
+	padding: 0px 0px 60px 0px;
+}
+
+.org-background .text > p {
+
+	margin-bottom: 15px;
+
+}
+
+.org-background-list li {
+	padding: 4px 0px;
+	list-style: inside;
+}
+
+.org-background-list li:last-child {
+	padding-bottom: 20px;
+}
+
+.org-background-list li > strong {
+	color: #000;
+}
+
+/*Organisation Background End*/
+
+/*Features Section*/
+
+.two-column-full .column {
+	width: 100%;
+	margin: 10px 0px;
+}
+
+.content-features {
+	background: rgba(0, 0, 0, 0.48);
+	padding: 20px;
+
+}
+
+.two-column-full .column h4 {
+	font-size: 25px;
+}
+
+/*Features Section End*/
+
+
+/*breadcrumb section*/
+
+.page-banner {
+
+	padding: 0px 0px;
+}
+
+.overlay {
+	padding: 50px 0px;
+	background: rgba(0, 0, 0, .7);
+}
+
+.overlay h1 {
+
+	color: #fff;
+}
+
+
+/*breadcrumb section End*/
+
+/*Latest Post*/
+
+.latest-posts .texture-layer {
+
+	background: rgba(0, 128, 0, .85);
+}
+
+/*Speaker Section*/
+
+.team-section .team-member .desc {
+
+	padding: 20px 0px 20px 0px;
+	min-height: 0px;
+}
+
+.team-section .team-member .member-title {
+
+	margin: -30px 15px 0px;
+}
+
+
+/*Speaker Section End*/
+
+/*Schedule Section */
+
+.schedule-section {
+
+	padding: 60px 0px 60px;
+}
+
+
+.common-gap {
+	padding-top: 30px;
+}
+
+.nested-events {
+	padding: 30px 0px;
+}
+
+.new-section-gap {
+	margin-bottom: 16px;
+	color: #008000;
+}
+
+.single-session {
+	margin-bottom: 16px;
+	color: #292929;
+}
+
+.location-side {
+	padding-left: 50px;
+
+}
+
+/*Schedule Section End*/
+
+
+/*breadcrumb*/
+
+.breadcrumb {
+
+	background: transparent;
+	padding: 8px 4px;
+}
+
+/*breadcrumb end*/
+
+
+/*Two Column Section*/
+.two-column {
+	padding: 0px 0px 60px 0px;
+	margin-top: 60px;
+}
+
+/*Two Column Section End*/
+
+
+/**/
+
+
+/*Sponsor Section*/
+
+.sponsors {
+	position: relative;
+	text-align: center;
+	background: transparent;
+	padding: 22px 0px;
+	margin: 60px 0px 80px;
+}
+
+.text-white {
+	color: #fff;
+	font-size: 40px;
+}
+
+.slider li a {
+	color: #eee;
+}
+
+.gap {
+	padding: 30px 30px 0px 0px;
+}
+
+.gap-1 {
+	padding: 30px;
+}
+/*Sponsor Section End*/
+
+/*Intro Section*/
+.sec-customised {
+	margin-bottom: 50px;
+}
+
+.intro-section {
+	padding: 60px 18px;
+
+}
+
+
+.intro-section h2 {
+	font-size: 40px;
+}
+
+.inner-intro-section h3 {
+	padding-bottom: 15px;
+}
+
+.intro-section:before {
+	background: #000000e6;
+}
+
+/*Intro Section End*/
+
+/*Organising Commitee*/
+
+.team-section .sec-title.customized {
+	margin-bottom: 25px;
+}
+
+/*Orgainising Commitee*/
+
+/*Member Section*/
+
+#project-version-one {
+	padding: 0px 0px 60px 0px;
+}
+
+.nor4al-gallery {
+	margin-top: 50px;
+}
+
+.sec-title h2 {
+
+	margin-bottom: 0px;
+
+
+}
+
+
+
+#project-version-one .col-lg-4 .img-wrap .content-wrap:before {
+	background: rgba(0, 128, 0, .85);
+}
+
+
+/*Member Section End*/
+
+
+/*Location*/
+
+.content-side h3 {
+	margin-bottom: 30px;
+}
+
+.location-list {
+	list-style: none;
+	margin-top: 0px;
+}
+
+.location-list li {
+	padding: 6px 0px;
+	font-size: 18px;
+	list-style: disc;
+	list-style-position: inside;
+}
+
+.two-column .feature {
+	padding-left: 0px;
+}
+
+.hot-title {
+	color: #008000;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+}
+
+.hot-address {
+	margin: 0px 0px;
+	text-transform: uppercase;
+}
+
+.schedule-box .hour-box .toggle-btn h3 {
+
+	font-size: 22px;
+}
+
+/*Location End*/
+
+
+/*----- Sponsorship Page Start -----*/
+
+.sponsorship-section-main {
+
+	padding: 60px 0px 60px;
+}
+
+.sponsorship-info-tbl {
+	padding: 0px 0px 30px;
+}
+
+.table-bordered > tbody > tr > td,
+.table-bordered > tbody > tr > th,
+.table-bordered > tfoot > tr > td,
+.table-bordered > tfoot > tr > th,
+.table-bordered > thead > tr > td,
+.table-bordered > thead > tr > th {
+
+	text-align: center;
+}
+
+.table > thead > tr > th {
+	font-size: 20px;
+}
+
+.table > thead {
+	background: #008000;
+	color: #fff;
+}
+
+.table > tbody > tr > td {
+	font-size: 19px;
+}
+
+.tab-sponsorship {
+	padding: 0px 0px 0px;
+}
+
+.tabbed-details {
+	margin: 30px 0px;
+}
+
+ul.list-item li {
+	list-style: disc;
+	padding: 5px 0px;
+}
+
+/*Sponsorship Page End*/
+
+
+/*Programs Page Start*/
+
+
+
+/*Programs Page End*/
+
+/*Registration Page Start*/
+
+.main-registration-section {
+
+	padding: 60px 0px 60px;
+}
+
+.fees-section {
+	margin-top: 30px;
+}
+
+.tbl-fees > thead > tr > th {
+	font-size: 18px;
+}
+
+.tbl-fees > tbody > tr > td:first-child {
+	font-size: 12px;
+}
+
+.tbl-fees > tbody > tr > td {
+	font-size: 16px;
+}
+
+.emphasized-text {
+
+	font-size: 27px;
+	color: #000;
+	font-weight: 600;
+}
+
+.sec-text.single-tbl-item {
+	margin-bottom: 40px;
+}
+
+.top-space {
+	padding-top: 28px;
+}
+
+.left-spacing {
+	padding: 20px 25px;
+}
+
+.light-bg {
+	background: #f1f1f1;
+}
+
+/*Registration Page Ends*/
+
+/*Exhibition Page Starts*/
+
+.main-exhibition-section {
+	padding: 100px 0px 100px;
+}
+
+/*Exhibition Page Ends*/
+
+/*Presentation Page Ends*/
+
+.main-presentation-section {
+	padding: 60px 0px 60px;
+}
+
+.speaker-listing .professional .info .prof-title {
+	font-size: 18px;
+	margin-bottom: 7px;
+	color: #292929;
+	font-weight: 500;
+}
+
+.speaker-listing .professional .info .prof-occup {
+	font-size: 15px;
+	color: #008000;
+}
+
+.speaker-listing .list-styling {
+
+	padding: 30px 0px;
+	border-top: 1px solid #000;
+
+}
+
+.speaker-listing .image {
+
+	position: absolute;
+	left: 15px;
+	top: 0px;
+	width: 72px;
+	height: 72px;
+	border: 1px solid #d0d0d0;
+	overflow: hidden;
+}
+
+.speaker-listing .professional .info {
+	position: relative;
+	padding-left: 110px;
+	padding-top: 10px;
+	min-height: 50px;
+	margin-bottom: 20px;
+}
+
+/*Presentation Page Ends*/
+
+/*Awards Page Start*/
+
+.main-section-start {
+
+	padding: 60px 0px 60px;
+
+}
+
+.content-wrapper-awards h3 {
+	margin: 12px 0px;
+}
+
+/*Awards Page Ends*/
+
+/*Members Section Starts*/
+
+.members-main-section {
+	padding: 60px 0px 80px
+}
+
+.container-box-main {
+	border: 1px solid #dedede;
+	padding: 0;
+	margin: 50px 0px;
+
+}
+
+.container-box-main:hover {
+	/*    background: #008000a6;*/
+	background: rgba(0, 128, 0, .8);
+	color: #fff;
+}
+
+.container-box-main:hover .infobox span {
+	color: #fff;
+}
+
+.infobox {
+	padding: 57px 18px;
+}
+
+.infobox label {
+	text-transform: capitalize;
+}
+
+.infobox span {
+	color: #008000;
+}
+
+/*Members Section Ends*/
+
+/*Abstract Submission Starts*/
+
+.main-abssubmition-section {
+	padding: 60px 0px 120px;
+}
+
+.right-spacing {
+	margin-right: 50px;
+	padding: 20px 25px;
+}
+
+.text-style {
+	margin-bottom: 60px;
+}
+
+.text-style p {
+	font-size: 18px;
+}
+
+.info-section-abs h3 {
+	margin-bottom: 20px;
+}
+
+.middle-text-block {
+	margin: 50px 0px;
+}
+
+.bottom-text-block h4 {
+	padding-bottom: 18px;
+}
+
+.conference-details p {
+	line-height: 1.3;
+}
+
+
+.get-informed {
+	position: relative;
+	padding: 120px 0px 150px 0px;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+
+}
+
+.get-informed::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: rgba(0, 0, 0, 0.8);
+	width: 100%;
+	height: 100%;
+}
+
+.head-sec {
+	padding-bottom: 52px;
+	color: #fff;
+}
+
+.head-sec h2 {
+	padding-bottom: 8px;
+}
+
+.head-sec p {
+	font-size: 18px;
+}
+
+/*Abstract Submission Ends*/
+
+/*Photo Gallery Page Starts*/
+
+.main-gallery-section {
+	padding: 60px 0px 80px;
+}
+
+/*Photo Gallery Page End*/
+
+/*Terms & condition Start*/
+
+.terms-main-section {
+	padding: 60px 0px 80px;
+}
+
+.common-spacing {
+	padding: 17px 0px;
+}
+
+.common-spacing h3 {
+	padding-bottom: 12px;
+}
+
+.cancellation-process-list {
+	padding-bottom: 8px;
+}
+
+.cancellation-process-list li {
+	list-style: disc;
+	list-style: inside;
+}
+
+/*Terms & condition Ends*/
+
+/*Social Media Links Footer*/
+.social-media-links li > a > i {
+	font-size: 20px;
+	float: left;
+	padding-right: 5px;
+
+}
+
+.social-label {
+	display: none;
+
+}
+
+.social-media-links li a:hover .social-label {
+	display: block;
+	float: right;
+	font-size: 18px;
+	cursor: pointer;
+
+}
+
+
+@media only screen and (min-width:1360px) and (max-width:1366px) {
+	.content-cust {
+		min-height: 350px;
+	}
+}
+
+/*Social Media Links Footer*/
+
+
+
+/*Test Card CSS*/
+
+.card {
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	max-width: 300px;
+	margin: auto;
+	text-align: center;
+	font-family: arial;
+}
+
+.title {
+	color: #008000;
+}
+
+button {
+	border: none;
+	outline: 0;
+	display: inline-block;
+	padding: 8px;
+	color: white;
+	background-color: #000;
+	text-align: center;
+	cursor: pointer;
+	width: 100%;
+	font-size: 18px;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+}
+
+button:hover,
+a:hover {
+	opacity: 0.7;
+}
+
+.card.card-inner {
+	height: 468px;
+}
+
+@media (max-width:768px) {
+	.card {
+		max-width: 100%;
+	}
+
+	.card.card-inner img {
+		width: 100%;
+	}
+	
+	
+}
+
+.event-gallery{
+    height: 250px;
+    width: 100%;
+    margin: 5px 0px;
+}
+
+
+/*5Ffarming 2019*/ 
+
+.lazy.lazy-event-gallery {
+	margin: 5px;
+}
+.members-main-section.members-two-thousand-nineteen {
+	padding: 60px 0px 60px;
+	margin: 60px 0px 60px;
+	background: #f1f1f1 !important;
+}
