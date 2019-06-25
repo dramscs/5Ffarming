@@ -20,32 +20,35 @@
     </div>
 @endif
    
-<form action="{{ route('speakers.store') }}" method="POST">
+<form action="{{ route('speakers.store') }}" method="POST" enctype="multipart/formdata">
     @csrf
   
      <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Name:</strong>
+                <label>Name</label>
                 <input type="text" name="name" class="form-control" placeholder="Name">
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Designation:</strong>
-                <textarea class="form-control" style="height:150px" name="designation" placeholder="Detail"></textarea>
+                <label>Designation</label>
+                <input type="text" name="designation" class="form-control" placeholder="Designation">
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Image:</strong>
-                <textarea class="form-control" style="height:150px" name="avatar" placeholder="Avatar"></textarea>
+                <label>Image</label> <br />
+                <input type="file" name="avtar" id="">
+               
             </div>
         </div>
-        <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-                <button type="submit" class="btn btn-primary">Submit</button>
+        <div class="col-xs-12 col-sm-12 col-md-12 mt-3 button-group">
+                <button type="submit" class="btn btn-outline-primary">Submit</button>
+                <button type="button" class="btn btn-outline-secondary">Cancel</button>
         </div>
     </div>
    
 </form>
 </div>
+

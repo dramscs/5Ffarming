@@ -4,7 +4,7 @@ namespace App\model;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Program extends Model
+class Evn_program_detail extends Model
 {
     //
 }

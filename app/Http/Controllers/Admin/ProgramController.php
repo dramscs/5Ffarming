@@ -2,18 +2,23 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\model\Evn_program_detail;
+use DB;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+
+
 
 class ProgramController extends Controller
 {
     
     public function index()
        {
-           $programs = Program::latest()->paginate(5);
+           $programs = Evn_program_detail::latest()->paginate(5);
      
-           $programs = DB::select("SELECT * FROM speakers WHERE active = 1 order by created_at DESC");
+           $programs = DB::select("SELECT * FROM evn_program_details WHERE active = 1 order by created_at DESC");
            
-           return view('views.index',compact('speakers'))
+           return view('views.program',compact('programs'))
                ->with('i', (request()->input('page', 1) - 1) * 5);
        }
       
