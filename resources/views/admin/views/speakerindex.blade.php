@@ -1,6 +1,8 @@
 @include('admin.includes.home')
- 
 
+@extends('admin.includes.structure')
+ 
+@section('section')
 <div class="container">
     <div class="row" style="padding-top:80px;">
         <div class="col-lg-12 margin-tb">
@@ -50,3 +52,7 @@
     </table>
   
       </div>
+      
+      {{ $speakers->links() }}
+
+      @endsection

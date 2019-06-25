@@ -8,14 +8,19 @@ use Illuminate\Http\Request;
 class SpeakersController extends Controller
 {
     
- public function index()
+    public function index()
     {
-        $speakers = Speaker::latest()->paginate(5);
-  
-        $speakers = DB::select("SELECT * FROM cmn_speakers WHERE active = 1 order by created_at DESC");
-        
-        return view('admin.views.speakerIndex',compact('speakers'))
-            ->with('i', (request()->input('page', 1) - 1) * 5);
+        {
+          
+         
+            
+            $speakers = DB::select("SELECT * FROM cmn_speakers WHERE active = 1 order by created_at DESC");
+
+            $speakers = Speaker::latest()->paginate(5);
+            return view('admin.views.speakerIndex',compact('speakers'))
+                ->with('i', (request()->input('page', 1) - 1) * 5);
+        }
+
     }
    
     public function create()
@@ -77,7 +82,7 @@ class SpeakersController extends Controller
             $speaker->avatar = $fileName ;
         }
   
-        $speaker->save() ;
+        $speaker->update() ;
         return redirect()->route('speakers.index')
                        ->with('success','You have successfully updated your files');
     }
