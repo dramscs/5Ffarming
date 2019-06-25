@@ -69,4 +69,8 @@
         </nav>
     </div>
 
+    @section('content')
+
+@show
+
 @endsection
