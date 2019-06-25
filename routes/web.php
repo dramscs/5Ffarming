@@ -4,13 +4,13 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('programs', 'User\ProgramController@index');
+Route::get('prog', 'User\ProgController@index');
 
 Route::get('members', 'User\MemberController@index');
 
 Route::get('sponsorship', 'User\SponsorshipController@index');
 
-Route::get('registration', 'User\TermController@index');
+Route::get('reg', 'User\RegController@index');
 
 Route::get('abstractsub', 'User\AbstactSubmissionController@index');
 
@@ -18,7 +18,7 @@ Route::get('exhibition', 'User\ExhibitionController@index');
 
 Route::get('awards', 'User\AwardsController@index');
 
-Route::get('speakers', 'User\SpeakersController@index');
+Route::get('speak', 'User\SpeakController@index');
 
 Route::get('conference2019', 'User\Conference2019Controller@index');
 
@@ -44,8 +44,8 @@ Route::post('/store','Admin\SpeakersController@store');
 
 Route::get('/registration', 'Admin\RegistrationController@index');
 
-Route::resource('programs','Admin\ProgramController');
+Route::resource('programs','Admin\Evn_program_detailController');
 
-Route::post('/store','Admin\ProgramController@store');
+Route::post('/store','Admin\Evn_program_detailController@store');
 
 Route::resource('event','Admin\EventController');

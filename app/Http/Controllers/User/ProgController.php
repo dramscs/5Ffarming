@@ -1,15 +1,15 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\User;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class ProgramController extends Controller
+class ProgController extends Controller
 {
     public function index()
     {
-        return view('user.views.programs');
+        return view('user.views.prog');
     }
 }
 

@@ -13,8 +13,9 @@
 
 </div>
 
-<form action="" method="POST" enctype="multipart/formdata">
+<form action="{{ route('programs.store') }}" method="POST" enctype="multipart/formdata">
     @csrf
+
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
@@ -39,7 +40,7 @@
 
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <label for="">Program Heading</label>
+                <label for="">Program Session Name</label>
                 <input type="text" name="txtprogramheading" id="txtprogramheading" class="form-control" placeholder="Program Heading">
             </div>
         </div>

@@ -6,11 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Speaker extends Model
 {
+    protected $table = 'cmn_speakers';
+    
     protected $fillable = [
         'name', 'designation'
     ];
 
-protected $table = 'speakers';
 	
 // primary key
 

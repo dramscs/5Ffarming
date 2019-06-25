@@ -28,7 +28,7 @@
                 <th>Program title</th>
                 <th>Program Day</th>
                 <th>Program Date</th>
-                <th>Program Heading</th>
+                <th>Program Session Name</th>
                 <th>Description</th>
                 <th>Start Time</th>
                 <th>End Time</th>

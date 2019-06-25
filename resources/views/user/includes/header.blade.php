@@ -23,12 +23,12 @@
 					<li class="dropdown"><a href="#">About</a>
 						<ul class="submenu">
 
-							<li><a href="{{asset('programs')}}">Program</a></li>
+							<li><a href="{{asset('prog')}}">Program</a></li>
 							<li><a href="{{asset('members')}}">Members</a></li>
 							<li><a href="{{asset('sponsorship')}}">Sponsorship</a></li>
 						</ul>
 					</li>
-					<li class="dropdown"><a href="{{asset('registration')}}">Registration</a>
+					<li class="dropdown"><a href="{{asset('reg')}}">Registration</a>
 						<ul class="submenu">
 							<li><a href="{{asset('abstractsub')}}">Abstact Submission</a></li>
 							<li><a href="{{asset('exhibition')}}">Exhibition</a></li>
@@ -36,7 +36,7 @@
 						</ul>
 					</li>
 
-					<li class="dropdown"><a href="{{asset('speakers')}}">Speakers</a>
+					<li class="dropdown"><a href="{{asset('speak')}}">Speakers</a>
 						<ul class="submenu">
 						</ul>
 					</li>
