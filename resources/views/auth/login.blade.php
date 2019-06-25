@@ -8,8 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link href="{{asset('public/css/base.css')}}" rel="stylesheet" />
-    <link href="{{asset('public/bootstrap/dist/css/bootstrap.min.css')}}" rel="stylesheet" />
+    <link href="{{asset('public/admin/css/base.css')}}" rel="stylesheet" />
+    <link href="{{asset('public/admin/css/app.css')}}" rel="stylesheet" />
     
 </head>
 <body class="background">
@@ -21,7 +21,7 @@
                 <div class="card-body">
 
                 <div class="logo text-center">
-				<img src="{{asset('public/image/final-logo.png')}}" />
+				<img src="{{asset('public/admin/image/final-logo.png')}}" />
 			</div>
             <h5 class="card-title text-center">Login </h5>
 

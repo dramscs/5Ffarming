@@ -14,13 +14,13 @@ class SpeakersController extends Controller
   
         $speakers = DB::select("SELECT * FROM speakers WHERE active = 1 order by created_at DESC");
         
-        return view('admin.views.index',compact('speakers'))
+        return view('admin.views.speakerIndex',compact('speakers'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
    
     public function create()
     {
-        return view('admin.views.create');
+        return view('admin.views.speakerCreate');
     }
   
     public function store(Request $request)

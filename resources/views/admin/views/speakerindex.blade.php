@@ -8,7 +8,7 @@
                 <h2>All Speaker</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-success" href="{{ route('speakers.create') }}"> Add New Speaker</a>
+                <a class="btn btn-outline-success" href="{{ route('speakers.create') }}"> Add New Speaker</a>
             </div>
         </div>
     </div>

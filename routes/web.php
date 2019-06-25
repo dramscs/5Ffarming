@@ -47,3 +47,5 @@ Route::get('/registration', 'Admin\RegistrationController@index');
 Route::resource('programs','Admin\ProgramController');
 
 Route::post('/store','Admin\ProgramController@store');
+
+Route::resource('event','Admin\EventController');
