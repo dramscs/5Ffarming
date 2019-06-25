@@ -2,21 +2,21 @@
 
 @section('content')
 <div id="app">
-        <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-dark bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                <img src="{{asset('public/image/final-logo.png')}}">
+                <img src="{{asset('public/admin/image/final-logo.png')}}">
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <div class="collapse navbar-collapse" id="navbarSupportedContent" style="padding-top:21px">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
                    	
 						<li class="nav-item">
-                                    <a class="nav-link" href="#">Events</a>
+                                    <a class="nav-link" href="{{asset('event')}}">Events</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{asset('programs')}}">Program</a>
