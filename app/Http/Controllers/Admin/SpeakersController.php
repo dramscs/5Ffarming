@@ -65,7 +65,7 @@ class SpeakersController extends Controller
 
         ]);
   
-        $speaker = new Speaker($request->input());
+         $speaker = new Speaker($request->input());
 
         if($file = $request->hasFile('avatar')) {
             
@@ -77,9 +77,9 @@ class SpeakersController extends Controller
             $speaker->avatar = $fileName ;
         }
   
-        $speaker->save() ;
+        $speaker->update() ;
         return redirect()->route('speakers.index')
-                       ->with('success','You have successfully updated your files');
+                       ->with('success','You have successfully uploaded your files');
     }
   
     
