@@ -23,7 +23,7 @@
     </div>
     @endif
 
-    <form action="{{ route('speakers.store') }}" method="POST" enctype="multipart/formdata">
+    <form action="{{ route('speakers.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
 
             <div class="row">
@@ -41,8 +41,8 @@
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
-                        <label>Image</label> <br />
-                        <input type="file" name="avtar" id="">
+                        <label>Image</label> 
+                        <input type="file" name="avatar" id="avatar" class="form-control">
 
                     </div>
                 </div>

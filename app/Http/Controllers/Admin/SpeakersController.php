@@ -28,14 +28,25 @@ class SpeakersController extends Controller
         $request->validate([
             'name' => 'required',
             'designation' => 'required',
-            'avatar' => '',
+            'avatar' => 'required|image|mimes:jpeg,png,jpg|max:2048',
 
         ]);
   
-        Speaker::create($request->all());
-        
-         return redirect()->route('speakers.index');
-                    //    ->with('success','speaker created successfully.');
+        $speaker = new Speaker($request->input());
+
+        if($file = $request->hasFile('avatar')) {
+            
+            $file = $request->file('avatar') ;
+            $destinationPath = public_path().'/images/' ;
+            $fileExtention = $file->getClientOriginalExtension();
+            $fileName = rand(1111,9999). '.' . $fileExtention;
+            $file->move($destinationPath,$fileName);
+            $speaker->avatar = $fileName ;
+        }
+  
+        $speaker->save() ;
+        return redirect()->route('speakers.index')
+                       ->with('success','You have successfully uploaded your files');
     }
    
      
@@ -50,13 +61,25 @@ class SpeakersController extends Controller
         $request->validate([
             'name' => 'required',
             'designation' => 'required',
-            'designation' => '',
+            'avatar' => 'required|image|mimes:jpeg,png,jpg|max:2048',
 
         ]);
   
-        $speaker->update($request->all());
+        $speaker = new Speaker($request->input());
+
+        if($file = $request->hasFile('avatar')) {
+            
+            $file = $request->file('avatar') ;
+            $destinationPath = public_path().'/images/' ;
+            $fileExtention = $file->getClientOriginalExtension();
+            $fileName = rand(1111,9999). '.' . $fileExtention;
+            $file->move($destinationPath,$fileName);
+            $speaker->avatar = $fileName ;
+        }
   
-        return redirect()->route('speakers.index')->with('success','Speaker updated successfully');
+        $speaker->save() ;
+        return redirect()->route('speakers.index')
+                       ->with('success','You have successfully updated your files');
     }
   
     
