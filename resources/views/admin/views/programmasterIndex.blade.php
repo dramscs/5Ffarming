@@ -7,10 +7,10 @@
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2>All Speaker</h2>
+                <h2>All Program</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-outline-success" href="{{ route('speakers.create') }}"> Add New Speaker</a>
+                <a class="btn btn-outline-success" href="{{ route('programmasters.create') }}"> Add New Program</a>
             </div>
         </div>
     </div>
@@ -24,21 +24,24 @@
     <table class="table table-bordered">
         <tr>
             <th>No</th>
-            <th>Name</th>
-            <th>Designation</th>
-            <th>Avatar</th>
+            <th>Event Name</th>
+            <th>Program Title</th>
+            <th>Day</th>
+            <th>Program Date</th>
             <th width="280px">Action</th>
         </tr>
-        @foreach ($speakers as $speaker)
+
+        @foreach ($programmasters as $programmaster)
         <tr>
             <td>{{ ++$i }}</td>
-            <td>{{ $speaker->name }}</td>
-            <td>{{ $speaker->designation }}</td>
-            <td>{{ $speaker->avatar }}</td>
+            <td>{{ $programmaster->event_id }}</td>
+            <td>{{ $programmaster->program_title }}</td>
+            <td>{{ $programmaster->day }}</td>
+            <td>{{ $programmaster->program_date }}</td>
             <td>
-         <form action="{{ route('speakers.destroy',$speaker->id) }}" method="POST">
+         <form action="{{ route('programmasters.destroy',$programmaster->id) }}" method="POST">
     
-    <a class="btn btn-primary" href="{{ route('speakers.edit',$speaker->id) }}">Edit</a>
+    <a class="btn btn-primary" href="{{ route('programmasters.edit',$programmaster->id) }}">Edit</a>
 
     @csrf
     @method('DELETE')
@@ -50,9 +53,8 @@
         </tr>
         @endforeach
     </table>
-  
       </div>
       
-      {{ $speakers->links() }}
+     
 
       @endsection

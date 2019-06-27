@@ -11,9 +11,6 @@ class SpeakersController extends Controller
     public function index()
     {
         {
-          
-         
-            
             $speakers = DB::select("SELECT * FROM cmn_speakers WHERE active = 1 order by created_at DESC");
 
             $speakers = Speaker::latest()->paginate(5);

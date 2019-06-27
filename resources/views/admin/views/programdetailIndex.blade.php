@@ -7,10 +7,10 @@
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2>All Speaker</h2>
+                <h2>All Program Details</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-outline-success" href="{{ route('speakers.create') }}"> Add New Speaker</a>
+                <a class="btn btn-outline-success" href="{{ route('programdetails.create') }}"> Add New Program Detail</a>
             </div>
         </div>
     </div>
@@ -24,21 +24,27 @@
     <table class="table table-bordered">
         <tr>
             <th>No</th>
-            <th>Name</th>
-            <th>Designation</th>
-            <th>Avatar</th>
+            <th>Program Title</th>
+            <th>Title</th>
+            <th>Start Time</th>
+            <th>End Time</th>
+            <th>Description</th>
+
             <th width="280px">Action</th>
         </tr>
-        @foreach ($speakers as $speaker)
+        @foreach ($programdetails as $programdetail)
         <tr>
             <td>{{ ++$i }}</td>
-            <td>{{ $speaker->name }}</td>
-            <td>{{ $speaker->designation }}</td>
-            <td>{{ $speaker->avatar }}</td>
+            <td>{{ $programdetail->program_id }}</td>
+            <td>{{ $programdetail->title }}</td>
+            <td>{{ $programdetail->starttime }}</td>
+            <td>{{ $programdetail->endtime }}</td>
+            <td>{{ $programdetail->description }}</td>
+
             <td>
-         <form action="{{ route('speakers.destroy',$speaker->id) }}" method="POST">
+         <form action="{{ route('programdetails.destroy',$programdetail->id) }}" method="POST">
     
-    <a class="btn btn-primary" href="{{ route('speakers.edit',$speaker->id) }}">Edit</a>
+    <a class="btn btn-primary" href="{{ route('programdetails.edit',$programdetail->id) }}">Edit</a>
 
     @csrf
     @method('DELETE')
@@ -50,9 +56,8 @@
         </tr>
         @endforeach
     </table>
-  
       </div>
       
-      {{ $speakers->links() }}
+     
 
       @endsection

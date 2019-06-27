@@ -1,4 +1,4 @@
-@extends('admin.includes.stucture')
+@include('admin.includes.stucture')
 
 @section('content')
 <div id="app">
@@ -19,8 +19,11 @@
                                     <a class="nav-link" href="{{asset('event')}}">Events</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{asset('programs')}}">Program</a>
-                                </li>
+                                    <a class="nav-link" href="{{asset('programmasters')}}">Program List</a>
+                                  </li>
+                                  <li class="nav-item">
+                                    <a class="nav-link" href="{{asset('programdetails')}}">Program Details</a>
+                                  </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{asset('speakers')}}">Speakers</a>
                                 </li>
@@ -69,8 +72,7 @@
         </nav>
     </div>
 
-    @section('content')
+  
 
 @show
 
-@endsection

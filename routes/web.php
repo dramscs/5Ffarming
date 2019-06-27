@@ -27,10 +27,6 @@ Route::get('contact', 'User\ContactController@index');
 Route::get('terms', 'User\TermController@index');
 
 
-
-
-
-
 //route for admin
 Auth::routes();
 
@@ -44,8 +40,10 @@ Route::post('/store','Admin\SpeakersController@store');
 
 Route::get('/registration', 'Admin\RegistrationController@index');
 
-Route::resource('programs','Admin\Evn_program_detailController');
+Route::resource('programmasters','Admin\ProgrammasterController');
 
-Route::post('/store','Admin\Evn_program_detailController@store');
+Route::post('/store','Admin\ProgrammasterController@store');
 
-Route::resource('event','Admin\EventController');
+Route::resource('programdetails','Admin\ProgramdetailController');
+
+Route::post('/store','Admin\ProgramdetailController@store');
