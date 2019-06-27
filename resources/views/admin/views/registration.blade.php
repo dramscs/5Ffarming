@@ -1,7 +1,7 @@
 @include('admin.includes.home')
 
 <div class="container">
-    <div class="row" style="padding-top:80px;">
+    <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
                 <h2>All Registrations</h2><br>
