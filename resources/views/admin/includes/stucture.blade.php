@@ -13,6 +13,8 @@
 	
 
 	<script src="{{ asset('public/admin/js/app.js') }}" defer></script>
+	<script src="{{asset('public/bootstrap/assets/js/jquery-3.4.1.min')}}"></script>
+<script src="{{asset('public/bootstrap/assets/js/popper.min')}}"></script>
 </body>
 
 </html>

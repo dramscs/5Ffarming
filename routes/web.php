@@ -48,4 +48,6 @@ Route::resource('programs','Admin\Evn_program_detailController');
 
 Route::post('/store','Admin\Evn_program_detailController@store');
 
-Route::resource('event','Admin\EventController');
+Route::resource('events','Admin\EventController');
+
+Route::post('/store','Admin\EventController@store');

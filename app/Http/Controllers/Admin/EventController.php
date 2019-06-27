@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
+use DB;
+use App\model\Evn_event_master;
 
 class EventController extends Controller
 {
@@ -15,7 +17,12 @@ class EventController extends Controller
     {
         //
 
-        return view('admin.views.eventIndex',compact('event'));
+        $events = Evn_event_master::latest()->paginate(5);
+        $events = DB::select("SELECT * FROM evn_event_master WHERE active = 1");
+
+
+        return view('admin.views.eventIndex',compact('events'))
+        ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
     /**
@@ -27,7 +34,7 @@ class EventController extends Controller
     {
         //
 
-        return view('admin.views.eventCreate',compact('event'));
+        return view('admin.views.eventCreate',compact('events'));
     }
 
     /**
@@ -38,7 +45,28 @@ class EventController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // Validation 
+
+        $request->validate([
+
+            'eventname' => 'required',
+            'description' => 'required',
+            'startdate' => 'required',
+            'enddate' => 'required',
+            'venue' => 'required',
+        ]);
+
+        $events = new Evn_event_master;
+
+        Evn_event_master::create($request->all());
+        return redirect()->route('events.index')
+                        ->with('success','speaker created successfully.');
+
+
+
+
+
+
     }
 
     /**
@@ -58,9 +86,10 @@ class EventController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Evn_event_master $event)
     {
         //
+        return view('admin.views.eventEdit',compact('event'));
     }
 
     /**
@@ -70,9 +99,26 @@ class EventController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Evn_event_master $event)
     {
         //
+
+
+        $request->validate([
+
+            'eventname' => 'required',
+            'description' => 'required',
+            'startdate' => 'required',
+            'enddate' => 'required',
+            'venue' => 'required',
+        ]);
+
+        $event-> update($request->all());
+        return redirect()->route('events.index')
+                        ->with('success','event update successfully.');
+
+
+
     }
 
     /**
@@ -84,5 +130,11 @@ class EventController extends Controller
     public function destroy($id)
     {
         //
+
+        $event = Evn_event_master::find($id);
+        $event = DB::select("UPDATE evn_event_master SET active = 0 WHERE id = $id");
+        return redirect()->route('events.index')
+        ->with('success','event deleted successfully.');
+        
     }
 }

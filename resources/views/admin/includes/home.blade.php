@@ -16,7 +16,7 @@
                     <ul class="navbar-nav mr-auto">
                    	
 						<li class="nav-item">
-                                    <a class="nav-link" href="{{asset('event')}}">Events</a>
+                                    <a class="nav-link" href="{{asset('events')}}">Events</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{asset('programs')}}">Program</a>
@@ -68,9 +68,3 @@
             </div>
         </nav>
     </div>
-
-    @section('content')
-
-@show
-
-@endsection
