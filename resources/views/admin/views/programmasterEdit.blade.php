@@ -51,7 +51,7 @@
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
                         <label>Program Date</label>
-                        <input type="text" name="program_date" value="{{ $programmaster->program_date }}" class="form-control">
+                        <input type="date" name="program_date" value="{{ $programmaster->program_date }}" class="form-control">
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-12 mt-3 button-group">

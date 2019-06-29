@@ -47,6 +47,7 @@
 					</li>
 					<li><a href="{{asset('contact')}}">Contact</a></li>
 					<li><a href="{{asset('terms')}}">T & C</a></li>
+					<li><a href="{{asset('login')}}">Login</a></li>
 				</ul>
 			</div>
 		</nav>

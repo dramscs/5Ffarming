@@ -55,7 +55,5 @@
             @endforeach
         </table>
 
-        {{$speakers->links()}}
-
 </div>
 @endsection

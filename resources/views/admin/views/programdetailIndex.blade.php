@@ -10,7 +10,7 @@
                 <h2>All Program Details</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-outline-success" href="{{ route('programdetails.create') }}"> Add New Program Detail</a>
+                <a class="btn btn-outline-success" href="{{ asset('programdetails.create') }}"> Add New Program Detail</a>
             </div>
         </div>
     </div>

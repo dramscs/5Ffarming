@@ -7,10 +7,10 @@
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2>All Program</h2>
+                <h2>All Gallary Images</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-outline-success" href="{{ asset('programmasters.create') }}"> Add New Program</a>
+                <a class="btn btn-outline-success" href="{{ asset('gallery.create') }}"> Add New Gallary</a>
             </div>
         </div>
     </div>
@@ -24,30 +24,31 @@
     <table class="table table-bordered">
         <tr>
             <th>No</th>
-            <th>Event Name</th>
-            <th>Program Title</th>
-            <th>Day</th>
-            <th>Program Date</th>
+            <th>Associate Type Id</th>
+            <th>Associate Id</th>
+            <th>Name</th>
+            <th>Image</th>
             <th width="280px">Action</th>
         </tr>
 
-        @foreach ($programmasters as $programmaster)
+        @foreach ($galleries as $image)
         <tr>
-            <td>{{ ++$i }}</td>
-            <td>{{ $programmaster->event_id }}</td>
-            <td>{{ $programmaster->program_title }}</td>
-            <td>{{ $programmaster->day }}</td>
-            <td>{{ $programmaster->program_date }}</td>
+        <td>{{ ++$i }}</td>
+            <td>{{ $image->associatetypeid }}</td>
+            <td>{{ $image->associateid }}</td>
+            <td>{{ $image->name }}</td>
+            <td>{{ $image->imagename }}</td>
             <td>
-         <form action="{{ route('programmasters.destroy',$programmaster->id) }}" method="POST">
+            <form action="{{ asset('galleries.destroy',$image->gallery_id) }}" method="POST">
     
-    <a class="btn btn-primary" href="{{ route('programmasters.edit',$programmaster->id) }}">Edit</a>
+    <a class="btn btn-primary" href="{{ asset('galleries.edit',$image->gallery_id) }}">Edit</a>
 
     @csrf
     @method('DELETE')
 
     <button type="submit" class="btn btn-danger">Delete</button>
 </form>
+
 
             </td>
         </tr>
@@ -58,3 +59,4 @@
      
 
       @endsection
+

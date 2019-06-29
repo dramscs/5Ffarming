@@ -8,15 +8,17 @@ use App\Http\Controllers\Controller;
 
 class ProgrammasterController extends Controller
 {
-    
+   
     public function index()
     {
-        
-                $programmasters = DB::select("SELECT * FROM evn_program_master WHERE active = 1 order by created_at DESC");
-    
-                $programmasters = Programmaster::latest()->paginate(5);
-                return view('admin.views.programmasterIndex',compact('programmasters'))
-                    ->with('i', (request()->input('page', 1) - 1) * 5);
+
+        $programmasters = Programmaster::latest()->paginate(5);
+        $programmasters = DB::select("SELECT * FROM evn_program_master WHERE active = 1");
+
+
+        return view('admin.views.programmasterIndex',compact('programmasters'))
+        ->with('i', (request()->input('page', 1) - 1) * 5);
+
                    
     }
 
@@ -69,13 +71,10 @@ class ProgrammasterController extends Controller
     
     public function destroy($id)
     {
-       
         $programmaster = Programmaster::find($id);
 		$programmaster = DB::select("UPDATE evn_program_master SET active = 0 WHERE id = $id");
 		return redirect('/programmasters')->with('success','Speaker deleted successfully');
     }
-
   
-    
 
 }

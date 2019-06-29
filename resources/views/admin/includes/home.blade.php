@@ -28,7 +28,10 @@
                                     <a class="nav-link" href="{{asset('speakers')}}">Speakers</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">Gallary</a>
+                                    <a class="nav-link" href="{{asset('gallery')}}">Gallery </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{asset('eventenrollments')}}">Event Enrollment</a>
                                 </li>
                                  <li class="nav-item">
                                     <a class="nav-link" href="{{asset('registration')}}">Registration List</a>
@@ -76,3 +79,7 @@
 
 @show
 
+
+<div class="container">
+@yield('contents')
+</div>

@@ -11,9 +11,10 @@ class ProgramdetailController extends Controller
     
     public function index()
     {
-        $programdetails = DB::table('evn_program_details')->where('active', '>', 0)->get();
+        $programdetails = Programdetail::latest()->paginate(5);
+        $programdetails = DB::select("SELECT * FROM evn_program_details WHERE active = 1");
                
-                $programdetails = Programdetail::latest()->paginate(5);
+                
                 return view('admin.views.programdetailIndex',compact('programdetails'))
                     ->with('i', (request()->input('page', 1) - 1) * 5);
                    

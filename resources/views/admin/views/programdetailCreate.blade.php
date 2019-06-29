@@ -25,16 +25,21 @@
 
     <form action="{{ route('programdetails.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
-            
+
             <div class="row">
-                <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
-                        <label>Select Program</label>
-                        <select type="text" name="program_id" class="form-control" placeholder="Select Program">
-                        <option value="">Select Any One</option>
-                        </select>
-                    </div>
+                  <select id='sel_depart' name='program_id'class="form-control">
+       <option  value=''>-- Select Program --</option>
+                   @foreach($departmentData['data'] as $department)
+             <option value='{{ $department->id }}'>{{ $department->program_title }}</option>
+           @endforeach
+
+    </select>
+                         </div>
                 </div>
+
+               
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
                         <label>Program Session Title</label>
@@ -44,13 +49,13 @@
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
                         <label>Start Time</label>
-                        <input type="text" name="starttime" class="form-control" placeholder="Start Time">
+                        <input type="time" name="starttime" class="form-control" placeholder="Start Time">
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
                         <label>End Time</label>
-                        <input type="text" name="endtime" class="form-control" placeholder="End Time">
+                        <input type="time" name="endtime" class="form-control" placeholder="End Time">
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-12">

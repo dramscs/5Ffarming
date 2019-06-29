@@ -43,19 +43,19 @@
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
-                        <label>Day</label>
-                        <input type="text" name="starttime" value="{{ $programdetail->starttime }}" class="form-control" placeholder="Designation">
+                        <label>Start Time</label>
+                        <input type="time" name="starttime" value="{{ $programdetail->starttime }}" class="form-control" placeholder="Designation">
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
-                        <label>Program Date</label>
-                        <input type="text" name="endtime" value="{{ $programdetail->endtime }}" class="form-control" placeholder="Designation">
+                        <label>End Time</label>
+                        <input type="time" name="endtime" value="{{ $programdetail->endtime }}" class="form-control" placeholder="Designation">
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
-                        <label>Program Date</label>
+                        <label>Description</label>
                         <input type="text" name="description" value="{{ $programdetail->description }}" class="form-control" placeholder="Designation">
                     </div>
                 </div>

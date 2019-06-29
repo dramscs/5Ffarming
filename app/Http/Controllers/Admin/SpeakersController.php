@@ -10,13 +10,12 @@ class SpeakersController extends Controller
     
     public function index()
     {
-        {
-            $speakers = DB::select("SELECT * FROM cmn_speakers WHERE active = 1 order by created_at DESC");
-
+        
             $speakers = Speaker::latest()->paginate(5);
+            $speakers = DB::select("SELECT * FROM cmn_speakers WHERE active = 1 order by created_at DESC");
             return view('admin.views.speakerIndex',compact('speakers'))
-                ->with('i', (request()->input('page', 1) - 1) * 5);
-        }
+                ->with('i');
+        
 
     }
    
@@ -58,17 +57,19 @@ class SpeakersController extends Controller
     }
   
    
-    public function update(Request $request, Speaker $speaker)
+    public function update(Request $request,$id)
     {
         $request->validate([
             'name' => 'required',
             'designation' => 'required',
             'avatar' => 'required|image|mimes:jpeg,png,jpg|max:2048',
+           
 
         ]);
-  
-         $speaker = new Speaker($request->input());
-
+      
+            $speaker = Speaker::find($id);
+        
+      
         if($file = $request->hasFile('avatar')) {
             
             $file = $request->file('avatar') ;
@@ -79,9 +80,9 @@ class SpeakersController extends Controller
             $speaker->avatar = $fileName ;
         }
   
-        $speaker->update() ;
+        $speaker->update($request->all());
         return redirect()->route('speakers.index')
-                       ->with('success','You have successfully uploaded your files');
+                       ->with('success','You have successfully uploaded/updates your files and data');
     }
   
     

@@ -34,7 +34,7 @@ class EventController extends Controller
     {
         //
 
-        return view('admin.views.eventCreate',compact('events'));
+        return view('admin.views.eventCreate');
     }
 
     /**
