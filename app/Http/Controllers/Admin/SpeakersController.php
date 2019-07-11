@@ -47,13 +47,13 @@ class SpeakersController extends Controller
   
         $speaker->save() ;
         return redirect()->route('speakers.index')
-                       ->with('success','You have successfully uploaded your files');
+                       ->with('success','You have successfully Added Speaker');
     }
    
      
     public function edit(Speaker $speaker)
     {
-        return view('admin.views.edit',compact('speaker'));
+        return view('admin.views.speakeredit',compact('speaker'));
     }
   
    
@@ -82,7 +82,7 @@ class SpeakersController extends Controller
   
         $speaker->update($request->all());
         return redirect()->route('speakers.index')
-                       ->with('success','You have successfully uploaded/updates your files and data');
+                       ->with('success','You have successfully updates Speaker');
     }
   
     

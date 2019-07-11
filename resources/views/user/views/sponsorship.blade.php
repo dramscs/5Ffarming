@@ -1,25 +1,25 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-	@include('user.includes.style')
+    @include('user.includes.style')
 </head>
+
 <body>
 
-	<!--header Starts-->
-	@include('user.includes.header')
+    <!--header Starts-->
+    @include('user.includes.header')
 
-	<!--header Ends-->
+    <!--header Ends-->
 
-	<!--Page banner Start-->
-	<section class="page-banner" style="background-image:url({{asset('public/user/images/background/small-banner.jpg')}});">
-		<div class="overlay">
-			<div class="auto-container">
-				<h1>Sponsorship</h1>
-				<nav aria-label="breadcrumb">
-					<ol class="breadcrumb">
-						<li class="breadcrumb-item"><a href="{{asset('/')}">Home</a></li>
+    <!--Page banner Start-->
+    <section class="page-banner" style="background-image:url({{asset('public/user/images/background/small-banner.jpg')}});">
+        <div class="overlay">
+            <div class="auto-container">
+                <h1>Sponsorship</h1>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="{{asset('/')}">Home</a></li>
 						<li class="breadcrumb-item active" aria-current="page">Sponsorship</li>
 					</ol>
 				</nav>

@@ -1,4 +1,3 @@
-@extends('admin.includes.structure')
 @include('admin.includes.home')
 
 <div class="container">
@@ -9,8 +8,6 @@
             </div>
         </div>
     </div>
-</div>
-    @section('section')
 
     @if ($errors->any())
     <div class="alert alert-danger">
@@ -54,8 +51,4 @@
             </div>
 
         </form>
-    
-
-
-
-@endsection
+</div>

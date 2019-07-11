@@ -8,45 +8,24 @@ use App\model\Evn_event_master;
 
 class EventController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        //
-
         $events = Evn_event_master::latest()->paginate(5);
-        $events = DB::select("SELECT * FROM evn_event_master WHERE active = 1");
+        $events = DB::select("SELECT * FROM evn_event_master WHERE active = 1 ORDER BY id DESC");
 
 
         return view('admin.views.eventIndex',compact('events'))
         ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
-        //
 
         return view('admin.views.eventCreate');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        // Validation 
-
         $request->validate([
 
             'eventname' => 'required',
@@ -54,56 +33,33 @@ class EventController extends Controller
             'startdate' => 'required',
             'enddate' => 'required',
             'venue' => 'required',
+            'imagename' => ''
         ]);
 
-        $events = new Evn_event_master;
+          $events = new Evn_event_master ($request->input());
 
-        Evn_event_master::create($request->all());
+            if($file = $request->hasFile('imagename')) {
+            
+            $file = $request->file('imagename') ;
+            $destinationPath = public_path().'/images/' ;
+            $fileExtention = $file->getClientOriginalExtension();
+            $fileName = rand(1111,9999). '.' . $fileExtention;
+            $file->move($destinationPath,$fileName);
+            $events->imagename = $fileName ;
+        }
+  
+        $events->save() ;
         return redirect()->route('events.index')
-                        ->with('success','speaker created successfully.');
-
-
-
-
-
-
+                        ->with('success','Event created successfully.');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit(Evn_event_master $event)
     {
-        //
         return view('admin.views.eventEdit',compact('event'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, Evn_event_master $event)
     {
-        //
-
-
         $request->validate([
 
             'eventname' => 'required',
@@ -114,27 +70,27 @@ class EventController extends Controller
         ]);
 
         $event-> update($request->all());
+
+            if($file = $request->hasFile('imagename')) {
+            
+            $file = $request->file('imagename') ;
+            $destinationPath = public_path().'/images/' ;
+            $fileExtention = $file->getClientOriginalExtension();
+            $fileName = rand(1111,9999). '.' . $fileExtention;
+            $file->move($destinationPath,$fileName);
+            $event->imagename = $fileName ;
+        }
+  
+        $event->update() ;
         return redirect()->route('events.index')
-                        ->with('success','event update successfully.');
-
-
-
+                        ->with('success','Event update successfully.');
     }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
-        //
-
         $event = Evn_event_master::find($id);
         $event = DB::select("UPDATE evn_event_master SET active = 0 WHERE id = $id");
         return redirect()->route('events.index')
-        ->with('success','event deleted successfully.');
+        ->with('success','Event deleted successfully.');
         
     }
 }

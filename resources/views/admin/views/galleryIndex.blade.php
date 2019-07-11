@@ -1,8 +1,5 @@
 @include('admin.includes.home')
 
-@extends('admin.includes.structure')
- 
-@section('section')
 <div class="container">
     <div class="row">
         <div class="col-lg-12 margin-tb">
@@ -10,53 +7,44 @@
                 <h2>All Gallary Images</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-outline-success" href="{{ asset('gallery.create') }}"> Add New Gallary</a>
+                <a class="btn btn-outline-success" href="{{route('gallery.create')}}"> Add New Gallary</a>
             </div>
         </div>
     </div>
-   
+
     @if ($message = Session::get('success'))
-        <div class="alert alert-success">
-            <p>{{ $message }}</p>
-        </div>
+    <div class="alert alert-success">
+        <p>{{ $message }}</p>
+    </div>
     @endif
-   
+
     <table class="table table-bordered">
         <tr>
             <th>No</th>
-            <th>Associate Type Id</th>
-            <th>Associate Id</th>
-            <th>Name</th>
-            <th>Image</th>
+            <th>Event Name</th>
             <th width="280px">Action</th>
         </tr>
 
         @foreach ($galleries as $image)
         <tr>
-        <td>{{ ++$i }}</td>
-            <td>{{ $image->associatetypeid }}</td>
+            <td>{{ ++$i }}</td>
             <td>{{ $image->associateid }}</td>
-            <td>{{ $image->name }}</td>
-            <td>{{ $image->imagename }}</td>
             <td>
-            <form action="{{ asset('galleries.destroy',$image->gallery_id) }}" method="POST">
-    
-    <a class="btn btn-primary" href="{{ asset('galleries.edit',$image->gallery_id) }}">Edit</a>
+                @if($image->imagename)
+                <img src="{{asset( 'public/images/'. $image->imagename)}}" style="width:100px;height:100px;text-align:center;" />
+                @else
+                Image Not Found
+                @endif
+            </td>
+            <td>
+                <form action="{{route('gallery.destroy',$image->id)}}" method="POST">
+                    @csrf
+                    @method('DELETE')
 
-    @csrf
-    @method('DELETE')
-
-    <button type="submit" class="btn btn-danger">Delete</button>
-</form>
-
-
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                </form>
             </td>
         </tr>
         @endforeach
     </table>
-      </div>
-      
-     
-
-      @endsection
-
+</div>

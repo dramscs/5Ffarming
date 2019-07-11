@@ -4083,3 +4083,30 @@ ul,li{
 	margin-bottom: 10px;
 	color: #7f7f7f;
 }
+ .card-event{
+                box-shadow: #999 0px 0px 2px;
+                 border-radius: 20px;
+        }
+
+#left {
+    float: left;
+    text-align: left;
+    padding-right: 10px;
+}
+
+
+#right {
+    float: right;
+    text-align: right;
+    padding-left: 10px;
+}
+
+.card-padding{
+    padding-top:10px; 
+    padding-bottom:26px;
+}
+
+.card-event-padding{
+    padding-top:10px; 
+    padding-bottom:10px;
+}

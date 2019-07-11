@@ -13,7 +13,7 @@ class EventenrollmentController extends Controller
     {
 
         $eventenrollments = Eventenrollment::latest()->paginate(5);
-        $eventenrollments = DB::select("SELECT * FROM evn_event_enrolment WHERE active = 1");
+        $eventenrollments = DB::select("SELECT * FROM evn_event_enrolment WHERE active = 1 ORDER BY id DESC");
 
 
         return view('admin.views.eventenrollmentIndex',compact('eventenrollments'))
@@ -49,7 +49,7 @@ class EventenrollmentController extends Controller
             }
             $eventenrollments->save() ;
             return redirect()->route('eventenrollments.index')
-                           ->with('success','Program Added successfully');
+                           ->with('success','Eventenrollment Added successfully');
                            return view('admin.views.eventenrollmentIndex');
     }
     
@@ -74,7 +74,7 @@ class EventenrollmentController extends Controller
   
         $eventenrollment->update($request->all());
   
-         return redirect()->route('eventenrollments.index')->with('success','Program updated successfully');
+         return redirect()->route('eventenrollments.index')->with('success','Eventenrollment updated successfully');
     }  
 
     
@@ -82,7 +82,7 @@ class EventenrollmentController extends Controller
     {
         $eventenrollment = Eventenrollment::find($id);
 		$eventenrollment = DB::select("UPDATE evn_event_enrolment SET active = 0 WHERE id = $id");
-		return redirect('/eventenrollments')->with('success','Speaker deleted successfully');
+		return redirect('/eventenrollments')->with('success','Eventenrollment deleted successfully');
     }
   
 

@@ -12,7 +12,13 @@ class GalleryController extends Controller
     public function index()
     {
         $galleries = Gallery::latest()->paginate(5);
-        $galleries = DB::select("SELECT * FROM cmn_gallery WHERE active = 1 order by created_at DESC");
+
+        $galleries = DB::select("SELECT *, 
+
+        (SELECT name FROM lkp_master WHERE lookupid=cmn_gallery.associatetypeid) As associatetypeid,  
+        (SELECT eventname FROM evn_event_master WHERE id=cmn_gallery.associateid AND active = 1) As associateid 
+        FROM cmn_gallery WHERE active = 1 ORDER BY id DESC");
+
         return view('admin.views.galleryIndex',compact('galleries'))
             ->with('i');
 
@@ -27,22 +33,30 @@ class GalleryController extends Controller
    
     public function store(Request $request)
     {
-        {
             $request->validate([
                 'associatetypeid' => 'required',
                 'associateid' => 'required',
                 'name' => '',
-                'imagename' => '',
-
-    
+                'imagename' => 'required'
             ]);
             
-            $galleries = new Gallery($request->input());
-            }
-            $galleries->save() ;
-            return redirect()->route('gallery.index')
-                           ->with('success','Image Added successfully');
-                           return view('admin.views. galleryIndex');
+            
+        $galleries = new Gallery($request->input());
+
+        if($file = $request->hasFile('imagename')) {
+            
+            $file = $request->file('imagename') ;
+            $destinationPath = public_path().'/images/' ;
+            $fileExtention = $file->getClientOriginalExtension();
+            $fileName = rand(1111,9999). '.' . $fileExtention;
+            $file->move($destinationPath,$fileName);
+            $galleries->imagename = $fileName ;
+        }
+  
+        $galleries->save() ;
+        return redirect()->route('gallery.index')
+                       ->with('success','You have successfully Added Image');
+            
     }
     
     public function edit(Gallery $gallery)
@@ -56,7 +70,8 @@ class GalleryController extends Controller
         $request->validate([
             'associatetypeid' => 'required',
                 'associateid' => 'required',
-                'imagename' => 'required',
+                'name' => '',
+                'imagename' => '',
     
         ]);
   
@@ -68,8 +83,8 @@ class GalleryController extends Controller
     
     public function destroy($id)
     {
-        $gallery = Gallery::find($id);
-		$gallery = DB::select("UPDATE cmn_gallery SET active = 0 WHERE gallery_id = $id");
+        $galleries = Gallery::find($id);
+		$galleries = DB::select("UPDATE cmn_gallery SET active = 0 WHERE id = $id");
 		return redirect('/gallery')->with('success','Image deleted successfully');
     }
   

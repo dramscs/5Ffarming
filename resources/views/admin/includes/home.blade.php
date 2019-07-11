@@ -1,4 +1,4 @@
-@include('admin.includes.stucture')
+@include('admin.includes.structure')
 
 @section('content')
 <div id="app">
@@ -31,7 +31,7 @@
                                     <a class="nav-link" href="{{asset('gallery')}}">Gallery </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{asset('eventenrollments')}}">Event Enrollment</a>
+                                    <a class="nav-link" href="{{asset('enrollments')}}">Event Enrollment</a>
                                 </li>
                                  <li class="nav-item">
                                     <a class="nav-link" href="{{asset('registration')}}">Registration List</a>

@@ -1,6 +1,5 @@
 @include('admin.includes.home')
 
-@section('section')
 <div class="col-lg-12 margin-tb">
     <div class="pull-left">
         <h2>All Events</h2>
@@ -34,18 +33,6 @@
 </div>
 
 
-@endsection
-
-	  
-	  
-	Event Create
-
-
-@extends('layouts.structure')
-@include('layouts.home')
-
-
-@section('section')
 <div class="row">
     <div class="col-lg-12 margin-tb">
         <div class="pull-left">

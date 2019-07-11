@@ -1,4 +1,3 @@
-@extends('admin.includes.structure')
 @include('admin.includes.home')
 
 <div class="container">
@@ -9,7 +8,6 @@
             </div>
         </div>
     </div>
-</div>
     @section('section')
 
     @if ($errors->any())
@@ -22,6 +20,8 @@
         </ul>
     </div>
     @endif
+    
+    <?php $programs=DB::table('evn_program_master')->get(); ?>
 
     <form action="{{ route('programdetails.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
@@ -29,13 +29,14 @@
             <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
-                  <select id='sel_depart' name='program_id'class="form-control">
-       <option  value=''>-- Select Program --</option>
-                   @foreach($departmentData['data'] as $department)
-             <option value='{{ $department->id }}'>{{ $department->program_title }}</option>
-           @endforeach
-
-    </select>
+                    <select  name='program_id'class="form-control">
+                            <option  value=''>-- Select Program --</option>
+                                @foreach ($programs as $program)
+                                @if($program->active == 1)
+                                 <option value='{{$program->id}}'>{{ucwords($program->program_title)}}</option>
+                                @endif
+                                @endforeach
+                        </select>
                          </div>
                 </div>
 
@@ -71,14 +72,4 @@
             </div>
 
         </form>
-    
-
-
-
-@endsection
-
-@section('section')
-
-
-
-        @endsection
+    </div>

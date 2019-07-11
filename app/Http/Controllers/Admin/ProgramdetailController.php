@@ -12,9 +12,9 @@ class ProgramdetailController extends Controller
     public function index()
     {
         $programdetails = Programdetail::latest()->paginate(5);
-        $programdetails = DB::select("SELECT * FROM evn_program_details WHERE active = 1");
-               
-                
+
+        $programdetails = DB::select("SELECT *, (SELECT program_title FROM evn_program_master WHERE id=evn_program_details.program_id AND active = 1) As program_id FROM evn_program_details WHERE active = 1 ORDER BY id DESC");
+        
                 return view('admin.views.programdetailIndex',compact('programdetails'))
                     ->with('i', (request()->input('page', 1) - 1) * 5);
                    
@@ -51,7 +51,6 @@ class ProgramdetailController extends Controller
         return view('admin.views.programdetailEdit',compact('programdetail'));
     }
   
-   
     public function update(Request $request, Programdetail $programdetail)
     {
         $request->validate([

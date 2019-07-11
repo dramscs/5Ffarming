@@ -1,8 +1,5 @@
 @include('admin.includes.home')
 
-@extends('admin.includes.structure')
- 
-@section('section')
 <div class="container">
     <div class="row">
         <div class="col-lg-12 margin-tb">
@@ -10,7 +7,7 @@
                 <h2>All Program Details</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-outline-success" href="{{ asset('programdetails.create') }}"> Add New Program Detail</a>
+                <a class="btn btn-outline-success" href="{{route('programdetails.create')}}"> Add New Program Detail</a>
             </div>
         </div>
     </div>
@@ -29,7 +26,6 @@
             <th>Start Time</th>
             <th>End Time</th>
             <th>Description</th>
-
             <th width="280px">Action</th>
         </tr>
         @foreach ($programdetails as $programdetail)
@@ -44,7 +40,9 @@
             <td>
          <form action="{{ route('programdetails.destroy',$programdetail->id) }}" method="POST">
     
-    <a class="btn btn-primary" href="{{ route('programdetails.edit',$programdetail->id) }}">Edit</a>
+         <a class="btn btn-primary" href="{{ route('programspeakers.index',$programdetail->id) }}">Add Speaker</a>
+
+        <a class="btn btn-primary" href="{{ route('programdetails.edit',$programdetail->id) }}">Edit</a>
 
     @csrf
     @method('DELETE')
@@ -57,7 +55,3 @@
         @endforeach
     </table>
       </div>
-      
-     
-
-      @endsection
