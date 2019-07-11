@@ -8,7 +8,13 @@ Route::get('members', 'User\MemberController@index');
 
 Route::get('sponsorship', 'User\SponsorshipController@index');
 
-Route::get('reg', 'User\RegController@index');
+Route::get('EventRegistration', 'User\EventRegistrationController@index');
+
+Route::get('/getEventRegistration/{id}', 'User\EventRegistrationController@getEventRegistration');
+
+Route::get('/bindDropDown', 'User\EventRegistrationController@bindDropDown');
+
+Route::post('/EventFee', 'User\EventRegistrationController@EventFee');
 
 Route::get('abstractsub', 'User\AbstactSubmissionController@index');
 

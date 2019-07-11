@@ -19,7 +19,7 @@
                             <li><a href="{{asset('sponsorship')}}">Sponsorship</a></li>
                         </ul>
                     </li>
-                    <li class="dropdown"><a href="{{asset('reg')}}">Registration</a>
+                    <li class="dropdown"><a href="{{asset('EventRegistration')}}">Registration</a>
                         <ul class="submenu">
                             <li><a href="{{asset('abstractsub')}}">Abstact Submission</a></li>
                             <li><a href="{{asset('exhibition')}}">Exhibition</a></li>
